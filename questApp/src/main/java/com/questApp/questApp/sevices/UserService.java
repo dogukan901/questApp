@@ -43,9 +43,9 @@ public class UserService {
     }
 
     public Optional<User> deleteOneUser(Long userId) {
-        Optional<User> user = userRepository.findById(userId);
         // Java object to JSON string
         try {
+            Optional<User> user = userRepository.findById(userId);
             userRepository.deleteById(userId);
             return user;
         } catch (Exception e) {
