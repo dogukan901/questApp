@@ -25,9 +25,8 @@ public class UserService {
         return userRepository.save(newUser);
     }
 
-    public User getOneUser(Long userId) {
+    public User getOneUserById(Long userId) {
         return userRepository.findById(userId).orElse(null);
-
     }
 
     public User updateOneUser(Long userId, User newUser) {
@@ -38,7 +37,7 @@ public class UserService {
             foundUser.setPassword(newUser.getPassword());
             userRepository.save(foundUser);
             return foundUser;
-        }else
+        } else
             return null;
     }
 
